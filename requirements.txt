@@ -1,0 +1,4 @@
+Django
+lxml
+bs4
+apscheduler==2.1.2
