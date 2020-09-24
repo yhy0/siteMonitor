@@ -26,7 +26,7 @@
 
 别人也可以访问，修改settings.py 中的ALLOWED_HOSTS = [] 
 
-![image-20200924101715753](/Users/yhy/PycharmProjects/siteMonitor/images/image-20200924101715753.png)
+![image-20200924101715753](images/image-20200924101715753.png)
 
 启动时使用`python3 manage.py runserver 0.0.0.0:8000` ，通过本机ip:8000即可访问
 
