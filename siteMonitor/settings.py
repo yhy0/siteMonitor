@@ -26,7 +26,7 @@ SECRET_KEY = '--v7-x#!zq$9#k=dn2#v*4!^ln2o^lh-tky-1*!&l&2b9cg_u7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*",]
 
 
 # Application definition
@@ -133,8 +133,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 465
 #发送邮件的邮箱
-EMAIL_HOST_USER = 'xxx@xxx.xxx'
+EMAIL_HOST_USER = ''
 #在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'xxxxxx'
+EMAIL_HOST_PASSWORD = ''
 #收件人看到的发件人
-EMAIL_FROM = '站点监测<xxx@xxx.xxx>'
+EMAIL_FROM = '站点监测<'
