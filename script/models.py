@@ -49,7 +49,7 @@ class Sites(models.Model):
 class Emails(models.Model):
     # 文件上传
     emali = models.CharField(max_length = 100)
-    is_send = models.BooleanField("是否发送")
+    is_send = models.BooleanField("是否发送", default=True)
 
     # 设置响应码颜色
     def colored_status(self):

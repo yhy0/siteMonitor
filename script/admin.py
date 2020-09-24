@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 
 from script.models import SiteInfo, Sites, Emails
 from script import getStatus as gs
@@ -51,9 +52,6 @@ class SitesAdmin(admin.ModelAdmin):
 
 @admin.register(Emails)
 class EmailsAdmin(admin.ModelAdmin):
-
-    # list_display设置要显示在列表中的字段，(id字段是Django模型的默认主键）
-    list_display = ('id', 'emali', 'is_send')
     # list_per_page设置每页显示多少条记录，默认是100条
     list_per_page = 50
     # ordering设置默认排序字段，负号表示降序排序
@@ -64,7 +62,13 @@ class EmailsAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
         #gs.get_single_file(obj.file_upload)
 
-
+    # 添加功能，按钮或者超链接之类的
+    def buttons(self, obj):
+        button_html = '<a href="/email_test?id=%s"><input type="button" value="邮箱测试" /></a>'%(obj.id)
+        return format_html(button_html)
+    buttons.short_description = "操作"
+    # list_display设置要显示在列表中的字段，(id字段是Django模型的默认主键）
+    list_display = ('emali', 'is_send', 'buttons')
 
 @admin.register(admin.models.LogEntry)
 class LogEntryAdmin(admin.ModelAdmin):

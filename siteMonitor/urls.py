@@ -21,6 +21,7 @@ from script import views
 
 urlpatterns = [
     path('', admin.site.urls),
+    path('email_test', views.email_test),
 ]
 
 # 配置url 当我们访问 settings.MEDIA_URL中的路径时，static会通过document_root去寻找对应的文件

@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from script.models import Emails, SiteInfo
 from django.db.models import Q
+from django.http import HttpResponse
 # Create your views here.
 
 # 定时任务
@@ -41,5 +42,20 @@ def send():
     for i in sites_death:
         content += "<a href= '" + i.url + "'>" + i.url + "</a>  ------  失联了！</br>"
     send_mail(subject, message, sender, emali_list, html_message=content)
+
+# 当网站状态变化时，发送邮件提醒
+def email_test(request):
+    subject = '站点监测'	#主题
+    message = '测试'
+    sender = settings.EMAIL_FROM		#发送邮箱，已经在settings.py设置，直接导入
+    emalis = Emails.objects.filter(id=request.GET['id'])
+    emali_list = []
+    if emalis.exists():
+        emali_list.append(emalis[0].emali)
+        content = "这是一封测试邮件！感谢您的使用！"
+        send_mail(subject, message, sender, emali_list, html_message=content)
+        return HttpResponse("发送成功，请查收！")
+    else:
+       return HttpResponse("发送失败！！")
 
 

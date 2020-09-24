@@ -133,8 +133,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 465
 #发送邮件的邮箱
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = 'xxxxxx'
 #在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'xxxxxx'
 #收件人看到的发件人
-EMAIL_FROM = '站点监测<'
+EMAIL_FROM = '站点监测'

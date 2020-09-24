@@ -2,15 +2,11 @@
 
 本平台使用Python3 和Django 框架
 
-`pip install -r requirements.txt`
-
-
+使用 `pip install -r requirements.txt` 安装Django和相关依赖
 
 在 siteMonitor文件夹下的setting.py修改邮件服务配置，当站点访问状态变化时，邮件通知
 
 ![image-20200909093247893](images/image-20200909093247893.png)
-
-
 
 在views.py 中修改后台循环检测时间
 
@@ -24,7 +20,7 @@
 
 
 
-别人也可以访问，修改settings.py 中的ALLOWED_HOSTS = [] 
+若想别人也可以访问，修改settings.py 中的ALLOWED_HOSTS = [] 
 
 ![image-20200924101715753](images/image-20200924101715753.png)
 
